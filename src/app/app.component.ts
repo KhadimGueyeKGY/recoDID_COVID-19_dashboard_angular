@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'recoDID_COVID-19';
+  title = 'BioSamples < EMBL-EBI >';
 }

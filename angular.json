@@ -83,7 +83,7 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              "src/favicon.ico",
+              "src/assets/embl_2.png",
               "src/assets"
             ],
             "styles": [
@@ -94,5 +94,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "424478bc-4d47-4c2c-bfe6-1e5e92fb683c"
   }
 }

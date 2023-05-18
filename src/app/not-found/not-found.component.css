@@ -1,0 +1,14 @@
+div{
+    margin-top: 50px;
+    text-align: center;
+}
+
+img{
+    width: 40%;
+}
+a{
+    font-size: 20px;
+    color: aliceblue;
+    background-color: blue;
+    border: 1 solid white;
+}

@@ -1,0 +1,11 @@
+<div class="body-id">
+    <div class="search">
+        <form action="#">
+            <input type="text"  placeholder="Search ... " name="input_search"  [(ngModel)]="value" (ngModelChange)="onInput(value)">
+            <button name="button_name"><img src="assets/search.jpg" alt="" height="20px"></button>
+        </form>
+        <p style="color: red ; font-size: 12px;" >Number of Biosamples : {{Biosamples_len}}</p>
+    </div>
+    <hr>
+    <p id= "id_res" *ngFor="let id of matchingIds_res">* <a href="./id-contain?id={{id}}" style="color: black; font-size: 20px;" >{{ id }}</a></p>
+</div>

@@ -1,0 +1,146 @@
+<div class="contain" *ngFor="let id of data">
+    <div class="contain_contain">
+      <div class="contain_contain_2" >
+        <p style="text-align: center; font-size: 20px; font-weight: bold;">Relationships</p>
+        <hr style="border: 1px solid aqua; background-color: aqua;">
+        <table style="width: 100%;" *ngIf="id.relationships">
+          <tr >
+            <td style="width: 35%; font-weight: bold; text-decoration: underline;">Source</td>
+            <td style="width: 30%; font-weight: bold; text-decoration: underline;">Type</td>
+            <td style="width: 35%; font-weight: bold; text-decoration: underline;">Target</td>
+          </tr>
+          <tr *ngFor="let relationships of id.relationships">
+            <td style="width: 35%;"><a href="#">{{relationships.source}}</a></td>
+            <td style="width: 30%; ">{{relationships.type}}</td>
+            <td style="width: 35%;"><a href="#">{{relationships.target}}</a></td>
+          </tr>
+
+        </table>
+
+      </div>
+
+        <div class="contain_contain_1" >
+        <table>
+            <tr *ngIf="id.accession">
+              <th style="width: 30%;"> <a href="#">{{id.accession}}</a></th>
+              <th style="width: 70%;">{{id.name}}</th>
+            </tr>
+            <tr *ngIf="id.webinSubmissionAccountId">
+              <td  style="width: 30%;">webin Submission Account Id: </td>
+              <td  style="width: 70%;">{{id.webinSubmissionAccountId}}</td>
+            </tr>
+            <tr *ngIf="id.submitted">
+                <td  style="width: 30%;">submitted on: </td>
+                <td  style="width: 70%;">{{id.submitted | date : 'yyyy-MM-dd HH:mm'}}</td>
+              </tr>
+              <tr *ngIf="id.characteristics['collection date']">
+                <td  style="width: 30%;">Collection date: </td>
+                <td  style="width: 70%;">{{id.characteristics['collection date'][0].text  }}</td>
+              </tr>
+              <tr *ngIf="id.create">
+                <td  style="width: 30%;">Create on: </td>
+                <td  style="width: 70%;">{{id.create | date : 'yyyy-MM-dd HH:mm'}}</td>
+              </tr>
+              <tr *ngIf="id.release">
+                <td  style="width: 30%;">Release on: </td>
+                <td  style="width: 70%;">{{id.release | date : 'yyyy-MM-dd HH:mm'}}</td>
+              </tr>
+              <tr *ngIf="id.characteristics['ENA first public']">
+                <td  style="width: 30%;">ENA first public: </td>
+                <td  style="width: 70%;">{{id.characteristics['ENA first public'][0].text }}</td>
+              </tr>
+              <tr *ngIf="id.characteristics['INSDC first public']">
+                <td  style="width: 30%;">INSDC first public: </td>
+                <td  style="width: 70%;">{{id.characteristics['INSDC first public'][0].text | date : 'yyyy-MM-dd HH:mm' }}</td>
+              </tr>
+            <tr *ngIf="id.update">
+                <td  style="width: 30%;">Updated on: </td>
+                <td  style="width: 70%;">{{id.update | date : 'yyyy-MM-dd HH:mm'}}</td>
+              </tr>
+              <tr *ngIf="id.characteristics['ENA last update']">
+                <td  style="width: 30%;">ENA last update: </td>
+                <td  style="width: 70%;">{{id.characteristics['ENA last update'][0].text }}</td>
+              </tr>
+              <tr *ngIf="id.characteristics['INSDC last update']">
+                <td  style="width: 30%;">INSDC last update: </td>
+                <td  style="width: 70%;">{{id.characteristics['INSDC last update'][0].text | date : 'yyyy-MM-dd HH:mm' }}</td>
+              </tr>
+              <tr *ngIf="id.characteristics.checklist">
+                <td  style="width: 30%;">Checklist: </td>
+                <td  style="width: 70%;">{{id.characteristics.checklist[0].text}}</td>
+              </tr>
+              <tr *ngIf="id.characteristics['ENA-CHECKLIST']">
+                <td  style="width: 30%;">ENA CHECKLIST: </td>
+                <td  style="width: 70%;">{{id.characteristics['ENA-CHECKLIST'][0].text }}</td>
+              </tr>
+              <tr *ngIf="id.characteristics['External Id']">
+                <td  style="width: 30%;">External Id: </td>
+                <td  style="width: 70%;">{{id.characteristics['External Id'][0].text }}</td>
+              </tr>
+              <tr *ngIf="id.characteristics['GISAID Accession ID']">
+                <td  style="width: 30%;">GISAID Accession ID: </td>
+                <td  style="width: 70%;">{{id.characteristics['GISAID Accession ID'][0].text }}</td>
+              </tr>
+              <tr *ngIf="id.characteristics['SRA accession']">
+                <td  style="width: 30%;">SRA accession: </td>
+                <td  style="width: 70%;">{{id.characteristics['SRA accession'][0].text }}</td>
+              </tr>
+              <tr *ngIf="id.characteristics.gender">
+                <td  style="width: 30%;">Gender: </td>
+                <td  style="width: 70%;">{{id.characteristics.gender[0].text}}</td>
+              </tr>
+            <tr *ngIf="id.taxId">
+                <td  style="width: 30%;">Taxonomy ID: </td>
+                <td  style="width: 70%;"><a href="https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id={{id.taxId}}">{{id.taxId}}</a></td>
+            </tr>
+            <tr *ngIf="id.characteristics['disease'] && id.characteristics.disease[0].ontologyTerms">
+                <td  style="width: 30%;">Disease: </td>
+                <td  style="width: 70%;"><a href="{{id.characteristics.disease[0].ontologyTerms[0]}}">{{id.characteristics["disease"][0].text }}</a></td>
+              </tr>
+              <tr *ngIf="id.characteristics['organism']">
+                <td  style="width: 30%;">Organism: </td>
+                <td  style="width: 70%;"><a href="{{id.characteristics.organism[0].ontologyTerms[0]}}">{{id.characteristics["organism"][0].text }}</a></td>
+              </tr>
+              <tr *ngIf="id.characteristics['project name']">
+                <td  style="width: 30%;">Project name: </td>
+                <td  style="width: 70%;">{{id.characteristics["project name"][0].text }}</td>
+              </tr>
+              <tr *ngIf="id.characteristics['sample title']">
+                <td  style="width: 30%;">Sample title: </td>
+                <td  style="width: 70%;">{{id.characteristics["sample title"][0].text }}</td>
+              </tr>
+              <tr *ngIf="id.characteristics['sample soure name']">
+                <td  style="width: 30%;">Sample soure name: </td>
+                <td  style="width: 70%;"><a href="{{id.characteristics['sample soure name'][0].ontologyTerms[0]}}">{{id.characteristics["sample soure name"][0].text }}</a></td>
+              </tr>
+            <tr *ngIf="id.characteristics['sample description']">
+                <td  style="width: 30%;">Description: </td>
+                <td  style="width: 70%;">{{id.characteristics["sample description"][0].text }}</td>
+              </tr>
+              <tr *ngIf="id.characteristics['organization']">
+                <td  style="width: 30%;">Organization: </td>
+                <td  style="width: 70%;">{{id.characteristics["organization"][0].Name }}</td>
+              </tr>
+              <tr *ngIf="id.characteristics['INSDC center name']">
+                <td  style="width: 30%;">INSDC center name: </td>
+                <td  style="width: 70%;">{{id.characteristics['INSDC center name'][0].text }}</td>
+              </tr>
+              <tr *ngIf="id.characteristics['collector name']">
+                <td  style="width: 30%;">Collector name: </td>
+                <td  style="width: 70%;">{{id.characteristics['collector name'][0].text  }}</td>
+              </tr>
+              <tr *ngIf="id.characteristics['geographic location (country and/or sea)']">
+                <td  style="width: 30%;">Geographic location (country and/or sea): </td>
+                <td  style="width: 70%;">{{id.characteristics['geographic location (country and/or sea)'][0].text  }}</td>
+              </tr>
+          </table>
+        </div>
+
+        
+
+          <div class="button">
+            <button class="right-btn">More Info >>></button>
+          </div>
+        
+    </div>
+</div>

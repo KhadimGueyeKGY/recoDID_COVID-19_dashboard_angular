@@ -1,0 +1,44 @@
+.header_div0{
+    margin: 0;
+    margin-bottom: 0px;
+    border-radius: 40px;
+    padding: 5px;
+    position: relative;
+    /*overflow-x: scroll;*/
+    background-color: #77B5FE;
+}
+.header_div1{
+    margin-left: 150px;
+    margin-top: 50px;
+    width: 90%;
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: bold;
+    align-items: center;
+    
+}
+nav{
+    font-size: 15px;
+    width: 100%;
+    margin-left: 150px;
+}
+nav ul{
+    list-style:none;
+}
+nav li{
+    display:inline;
+    line-height:1.5px
+}
+nav li:not(:first-child) > :only-child,
+nav ul > :first-child a{
+   text-decoration:none;
+   font-size:1.4em !important;
+   /*outline:1px solid blue;*/
+   padding:8px;
+   letter-spacing:0.9px;
+}  
+
+#ena_logo{
+    margin-right: 150px;
+    float: right;
+}

@@ -1,0 +1,53 @@
+.contain{
+    width: 100%;
+    
+}
+
+.contain_contain{
+    margin-left: 7px;
+    margin-top: 7px;
+    margin-right: 7px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: #000000;
+    border-style: solid;
+    border-width: 1px;
+}
+
+th{
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+td{
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+.button{
+    margin-bottom: 7px;
+    margin-left: 85%;
+}
+/*
+  .right-btn {
+    float: right;
+    margin-right: 20px;
+  }
+  */
+
+  .contain_contain_1{
+    width: 65%;
+    
+  }
+
+  .contain_contain_2{
+    width: 35%;
+    float: right;
+    margin-top: 7px;
+    margin-right: 7px;
+
+  }
+  

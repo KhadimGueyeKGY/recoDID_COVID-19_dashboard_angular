@@ -1,0 +1,19 @@
+.row{
+    display: flex;
+}
+
+/*.col{
+    flex: 1;
+    padding: 1em;
+}*/
+#col_id{
+    width: 25%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #c6dbf3;
+}
+#col_contain{
+    width: 75%;
+    height: 100%;
+
+}
